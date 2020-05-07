@@ -22,10 +22,12 @@ module.exports = {
             loader: "less-loader",
             options: {
               sourceMap: true,
-              plugins:[new RewriteImportPlugin({
-								paths: {
-									'./other.less': __dirname + './foo.less' }
-							})]
+              lessOptions: {
+                plugins:[new RewriteImportPlugin({
+                  paths: {
+                    './other.less': __dirname + './foo.less' }
+                })]
+              }
             },
           },
         ],
